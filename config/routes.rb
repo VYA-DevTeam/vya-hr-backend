@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :members
+  get '/birthday' => 'members#birthday' 
   get '/birthdayofmonth' => 'bdayofmonth#index', to: proc { [200, {}, ['']] }
 
 

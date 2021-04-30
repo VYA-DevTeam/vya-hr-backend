@@ -6,7 +6,11 @@ class MembersController < ApplicationController
     @members = Member.all
     render json: @members
   end
-
+  
+  def birthday
+    @members = Member.where("extract(month from birthday) = ?", Date.today.strftime('%m'))
+    render json: @members
+  end
   # GET /members/1
   def show
     render json: @Member 
