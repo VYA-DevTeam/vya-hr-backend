@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_161746) do
 
   create_table "members", force: :cascade do |t|
     t.string "name"
+    t.string "nickname"
     t.string "team"
     t.date "birthday"
     t.integer "gen"
