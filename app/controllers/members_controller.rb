@@ -8,7 +8,8 @@ class MembersController < ApplicationController
   end
   
   def birthday
-    @members = Member.where("extract(month from birthday) = ?", Date.today.strftime('%m'))
+    @date = Date.today + 7.hours
+    @members = Member.where("extract(month from birthday) = ?", @date.strftime('%m'))
     render json: @members
   end
   # GET /members/1
