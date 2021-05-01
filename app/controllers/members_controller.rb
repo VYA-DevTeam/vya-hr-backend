@@ -9,7 +9,7 @@ class MembersController < ApplicationController
   
   def birthday
     require 'active_support/core_ext'
-    @date = Date.today - 24.hours
+    @date = Date.today + 7.hours
     @members = Member.where("extract(month from birthday) = ?", @date.strftime('%m'))
     render json: @members
   end
